@@ -16,14 +16,18 @@ const About = () => {
         </div>
         <div className="about-right">
           <div className="about-para">
-            <p>I am a experienced Frontend Developer with a strong foundation in HTML, CSS, and JavaScript. Eager to build user-friendly and responsive web applications while continuously learning modern frameworks like React</p>
-            <p>Enthusiastic Frontend Developer (Fresher) skilled in creating clean, responsive, and visually appealing web designs. Excited to contribute to real-world projects and grow in a collaborative environment.</p>
+            <p>I am a motivated MERN Stack Developer with hands-on experience in building web applications using HTML, CSS, JavaScript, React, Node.js, Express.js, and MongoDB. I have completed 6 months of professional training in full-stack development, where I worked on real-world projects and strengthened my practical skills.</p>
+
+            <p>I hold a Bachelor of Computer Applications (BCA) from Government PG College, Una, and a Diploma in Computer Applications (DCA), which helped me build strong fundamentals in computer applications and programming.</p>
+
+            <p>I am passionate about learning new technologies, improving my development skills, and looking for an opportunity to start my career as a full-stack developer where I can contribute and grow.</p>
           </div>
           <div className="about-skills">
             <div className="about-skill"><p>HTML & CSS</p><hr style={{ width: "50%" }} /></div>
             <div className="about-skill"><p>React JS</p><hr style={{ width: "70%" }} /></div>
             <div className="about-skill"><p>Javascript</p><hr style={{ width: "60%" }} /></div>
-            <div className="about-skill"><p>Next JS</p><hr style={{ width: "50%" }} /></div>
+            <div className="about-skill"><p>Next JS, Express js</p><hr style={{ width: "50%" }} /></div>
+            <div className="about-skill"><p>MongoDB</p><hr style={{ width: "75%" }} /></div>
 
           </div>
         </div>
@@ -31,12 +35,12 @@ const About = () => {
       <div className="about-achievements">
         <hr />
         <div className="about-achievement">
-          <h1>2</h1>
+          <h1>6</h1>
           <p>MONTHS OF EXPERIENCE</p>
         </div>
         <hr />
         <div className="about-achievement">
-          <h1>3</h1>
+          <h1>5</h1>
           <p>PROJECTS COMPLETED </p>
         </div>
         <hr />

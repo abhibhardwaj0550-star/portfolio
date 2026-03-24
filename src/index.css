@@ -1,11 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-body{
-  height: 100vh;
-  background: #161513;
-  color: white;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+
+body {
+  background: #0f0f11;
+  color: #f3f3f3;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
 }
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(270deg, #DF8908 10%, #B415ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

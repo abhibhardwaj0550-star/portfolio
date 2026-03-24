@@ -10,9 +10,20 @@ img[src*="pattern.svg"] {
 }
 
 @keyframes floatPattern {
-  0% { transform: translateY(0px); opacity: 0.5; }
-  50% { transform: translateY(-10px); opacity: 0.7; }
-  100% { transform: translateY(0px); opacity: 0.5; }
+  0% {
+    transform: translateY(0px);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: 768px) {
