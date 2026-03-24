@@ -22,17 +22,10 @@ const Contact = () => {
     });
   };
 
-  // Send to backend
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setLoading(true); // Start loader
-
-    const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
-    };
 
     try {
       const res = await fetch("http://localhost:5000/mail", {
@@ -113,6 +106,7 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
+            minLength={5}
           ></textarea>
 
           <button type='submit' className="contact-submit" disabled={loading}>
