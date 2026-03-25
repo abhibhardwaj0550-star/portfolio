@@ -14,7 +14,18 @@ const MyWork = () => {
                 </div>
                 <div className='mywork-container'>
                     {mywork_data.map((work, index) => {
-                        return <img key={index} src={work.w_img} alt="" />
+                        return (
+                            <div key={index} className="mywork-item" onClick={() => window.open(work.w_link, "_blank")}>
+                                <img src={work.w_img} alt={work.w_name} />
+                                <div className="mywork-hover">
+                                    <h3>{work.w_name}</h3>
+                                    <div className="live-link-btn">
+                                        <span>View Live</span>
+                                        <img src={arrow_icon} alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        );
                     })}
                 </div>
                 <div className="mywork-showmore">

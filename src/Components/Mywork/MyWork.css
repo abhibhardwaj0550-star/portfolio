@@ -36,22 +36,90 @@
     max-width: 1200px;
 }
 
-.mywork-container img {
+.mywork-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.mywork-item img {
     box-sizing: border-box;
     width: 100%;
-    height: 300px;
+    aspect-ratio: 16/10;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.4s ease;
-    cursor: pointer;
+    display: block;
 }
 
-.mywork-container img:hover {
-    transform: scale(1.05) translateY(-10px);
-    box-shadow: 0 20px 40px rgba(185, 35, 225, 0.3);
-    border: 2px solid rgba(180, 21, 255, 0.6);
+.mywork-hover {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(15, 15, 17, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.mywork-hover h3 {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(270deg, #DF8908 0%, #B415ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.live-link-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #B415ff;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.live-link-btn img {
+    width: 15px;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    aspect-ratio: auto;
+}
+
+.mywork-item:hover {
+    transform: translateY(-10px);
+}
+
+.mywork-item:hover .mywork-hover {
+    opacity: 1;
+}
+
+.mywork-item:hover .mywork-hover h3,
+.mywork-item:hover .live-link-btn {
+    transform: translateY(0);
+}
+
+.live-link-btn:hover {
+    background: #B415ff;
+    box-shadow: 0 5px 15px rgba(180, 21, 255, 0.4);
 }
 
 .mywork-showmore {
@@ -95,8 +163,8 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-    .mywork-container img {
-        height: 280px;
+    .mywork-item img {
+        aspect-ratio: 16/10;
     }
 }
 
@@ -116,7 +184,7 @@
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    .mywork-container img {
+    .mywork-item img {
         height: auto;
         aspect-ratio: 4/3;
     }
