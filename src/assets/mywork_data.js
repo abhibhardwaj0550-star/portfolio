@@ -3,7 +3,7 @@ import project2_img from '../assets/project2.png'
 import project3_img from '../assets/project3.png'
 import project4_img from '../assets/project4.png'
 import project5_img from '../assets/project5.png'
-import project6_img from '../assets/project6.svg'
+import project6_img from '../assets/project6.png'
 
 
 
@@ -42,7 +42,7 @@ const mywork_data = [
     w_no:6,
     w_name:"My Portfolio",
     w_img:project6_img,
-    w_link: "https://abhibhardwaj.vercel.app/"
+    w_link: "https://portfolio-f8ua.onrender.com/"
 },
 ];
 
