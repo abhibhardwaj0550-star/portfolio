@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-top-right">
-                <p>I'm currently available to take on new projects, so feel to send me a message that you want me to work on . You can contact anytime.</p>
+                <p>I'm currently available to take on new projects, so feel free to send me a message that you want me to work on . You can contact anytime.</p>
 
                 <div className="footer-email-input">
                     <img src={mail_icon} alt="" /><p>abhibhardwaj0550@gmail.com</p>
