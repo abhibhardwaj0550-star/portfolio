@@ -110,14 +110,18 @@
 .about-skill hr::after {
     content: '';
     position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     animation: shine 2s infinite;
 }
 
 @keyframes shine {
-    100% { left: 100%; }
+    100% {
+        left: 100%;
+    }
 }
 
 /* ---------- ACHIEVEMENTS ---------- */
@@ -174,14 +178,31 @@
     .about {
         padding: 80px 5%;
     }
+
     .about-section {
         gap: 50px;
     }
-    .about-left { width: 40%; }
-    .about-right { width: 60%; }
-    .about-para { font-size: 18px; }
-    .about-skill p { font-size: 16px; min-width: 130px; }
-    .about-achievement h1 { font-size: 40px; }
+
+    .about-left {
+        width: 40%;
+    }
+
+    .about-right {
+        width: 60%;
+    }
+
+    .about-para {
+        font-size: 18px;
+    }
+
+    .about-skill p {
+        font-size: 16px;
+        min-width: 130px;
+    }
+
+    .about-achievement h1 {
+        font-size: 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -189,31 +210,56 @@
         padding: 60px 4%;
         gap: 60px;
     }
-    .about-title h1 { font-size: 40px; }
-    .about-title img { width: 80px; right: 0; }
-    
+
+    .about-title h1 {
+        font-size: 40px;
+    }
+
+    .about-title img {
+        width: 80px;
+        right: 0;
+    }
+
     .about-section {
         flex-direction: column;
         gap: 40px;
         text-align: center;
     }
-    .about-left, .about-right { width: 100%; }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+    }
+
     .about-left img {
         width: 80%;
         margin: auto;
     }
+
     .about-para {
         font-size: 16px;
         text-align: left;
     }
-    .about-skills { align-items: flex-start; width: 100%; }
+
+    .about-skills {
+        align-items: flex-start;
+        width: 100%;
+    }
+
     .about-skill {
         gap: 20px;
         width: 100%;
         justify-content: flex-start;
     }
-    .about-skill hr { width: 50%; }
-    .about-skill p { min-width: 110px; text-align: left;}
+
+    .about-skill hr {
+        width: 50%;
+    }
+
+    .about-skill p {
+        min-width: 110px;
+        text-align: left;
+    }
 
     .about-achievements {
         flex-direction: column;
@@ -222,6 +268,7 @@
         border: none;
         padding: 0;
     }
+
     .about-achievements hr {
         width: 50%;
         height: 1px;
