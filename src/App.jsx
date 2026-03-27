@@ -6,6 +6,8 @@ import Services from './Components/Services/Services'
 import MyWork from './Components/Mywork/MyWork'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -21,7 +23,7 @@ function App() {
       <MyWork />
       <Contact />
       <Footer />
-      
+      <ToastContainer />
     </div>
   )
 }

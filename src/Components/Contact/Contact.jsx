@@ -5,49 +5,42 @@ import mail_icon from '../../assets/mail_icon.svg';
 import location_icon from '../../assets/location_icon.svg';
 import call_icon from '../../assets/call_icon.svg';
 
+import { toast } from 'react-toastify';
+
 const Contact = () => {
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+  const [loading, setLoading] = useState(false);
 
-  const [loading, setLoading] = useState(false); // Loader State
+  const onSubmit = async (event) => {
+    event.preventDefault();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+    setLoading(true);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const formData = new FormData(event.target);
 
-    setLoading(true); // Start loader
+    // Add Web3Forms Access Key
+    formData.append("access_key", "84e14413-8695-4cc4-a829-d7acaf2bee47");
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/mail`, {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: formData
       });
 
-      const data = await res.json();
+      const data = await response.json();
 
       if (data.success) {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        toast.success('Thank you for Submission!')
+        event.target.reset();
       } else {
-        alert("Failed to send message!");
+        console.log("Error", data);
+        toast.error(data.message)
       }
     } catch (error) {
-      alert("Server error! Check backend.");
-      console.log(error);
+      toast.error(error.message)
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false); 
   };
 
   return (
@@ -77,14 +70,12 @@ const Contact = () => {
           </div>
         </div>
 
-        <form className="contact-right" onSubmit={handleSubmit}>
+        <form className="contact-right" onSubmit={onSubmit}>
           <label>Your Name</label>
           <input
             type="text"
             placeholder='Enter your name'
             name='name'
-            value={formData.name}
-            onChange={handleChange}
             required
           />
 
@@ -93,8 +84,6 @@ const Contact = () => {
             type="email"
             placeholder='Enter your email'
             name='email'
-            value={formData.email}
-            onChange={handleChange}
             required
           />
 
@@ -103,8 +92,6 @@ const Contact = () => {
             name="message"
             rows="8"
             placeholder='Enter your message'
-            value={formData.message}
-            onChange={handleChange}
             required
             minLength={5}
           ></textarea>
